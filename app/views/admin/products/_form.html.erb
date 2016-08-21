@@ -1,0 +1,28 @@
+<%= form_for [:admin, product] do |f| %>
+  
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul> 
+    </div>
+<% end %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </fieldset>
+
+  <fieldset>          
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </fieldset>
+
+  <fieldset>          
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
+  </fieldset>
+
+  <%= f.button 'Create Product' %>
+<% end %>
