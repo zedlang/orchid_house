@@ -8,4 +8,7 @@ Rails.application.routes.draw do
 
   resources :products
   
+  namespace :admin do
+    root "application#index"
+  end
 end
