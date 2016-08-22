@@ -1,5 +1,7 @@
 When(/^they click on a product's link$/) do
-  click_on "Details"
+  within("##{@product.id}") do
+    click_link "Details"
+  end
 end
 
 Then(/^they see the product's details$/) do

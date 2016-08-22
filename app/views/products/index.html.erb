@@ -3,13 +3,11 @@
 </header>
 <body>
   <ul class="orchids">
-    <li>
       <% @products.each do |product| %>
         <h3><%= product.name %></h3>
-        <li>
+        <li id="<%= product.id %>">
           <%= link_to "Details", product_path(product) %>
         </li> 
       <% end %>
-    </li>
   </ul>
 </body>
