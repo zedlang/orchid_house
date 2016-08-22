@@ -1,5 +1,5 @@
 class Admin::ProductsController < Admin::ApplicationController
-  before_action :set_product, only: [:edit, :update]
+  before_action :set_product, only: [:edit, :update, :destroy]
 
   def new
     @product = Product.new
@@ -24,6 +24,12 @@ class Admin::ProductsController < Admin::ApplicationController
       flash.now[:alert] = "Product has not been updated"
       render "edit"
     end 
+  end
+
+  def destroy
+    @product.destroy
+    flash[:notice] = "Product has been deleted"
+    redirect_to products_path
   end
 
   private
