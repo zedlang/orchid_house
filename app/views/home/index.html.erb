@@ -1,20 +1,9 @@
-<h1>Zareh's World of Orchids</h1>
-<header>
-  <ul>
-  <% unless user_signed_in? %>
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
-    <li>
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
-  <% end %>
-  </ul>
-  <% if user_signed_in? %>
-    <p>
-      Signed in as <%= current_user.email %>
-    </p>
-    <ul>
-      <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-    </ul>
-  <% end %>
+<div class="img"><img src="/images/cymbidium.jpg" alt="cymbidium orchid"></div>
+<div class="img"><img src="/images/phal.jpg" alt= "phaleonopsis orchid"></div>
+
+
+<div id="title"><a href="/products">Zareh's House of Orchids - A world of orchids in one click!</a></div>
+
+
+<div class="img"><img src="/images/vanda.jpg" alt="vanda orchid"></div>
+<div class="img"><img src="/images/zygo.jpg" alt="zygopetallum orchid"></div>

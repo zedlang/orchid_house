@@ -1,13 +1,14 @@
 <header>
-  <h1>Products</h1>
+  <h1>Orchids available today!</h1>
 </header>
-<body>
   <ul class="orchids">
       <% @products.each do |product| %>
-        <h3><%= product.name %></h3>
-        <li id="<%= product.id %>">
-          <%= link_to "Details", product_path(product) %>
-        </li> 
+        <div class="img"><img src='/images/<%= product.name %>.jpg'>
+          <div class="desc"><h3><%= product.name %></h3>
+            <li id="<%= product.id %>">
+              <%= link_to "Details", product_path(product) %>
+            </li>
+          </div>
+        </div>
       <% end %>
   </ul>
-</body>

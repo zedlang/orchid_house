@@ -1,3 +1,26 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+  color: purple;
+  font-style: italic;
+  text-align: center;
+  font-size:  30pt;
+}
+
+div.img {
+  margin: 50px;
+  float: left;
+  width: 100px;
+}
+
+div.img img {
+  width: 150px;
+  height: 150px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: left;
+}
+
+div.desc li {
+  list-style-type: none;
+}

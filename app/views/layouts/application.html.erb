@@ -9,6 +9,29 @@
   </head>
 
   <body>
+  <header>
+    <span class="sign_in_out_up">
+      <% unless user_signed_in? %>
+        <%= link_to "Sign in", new_user_session_path, class: "link_button" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "link_button" %>
+      <% end %>
+      <% if user_signed_in? %>
+        <p>
+          Signed in as <strong><%= current_user.email %></strong>
+        </p>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "link_button" %>
+      <% end %>
+    </span>
+  </header>
+  <div>
+    <ul class="navbar">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/news">News</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
     <%= yield %>
