@@ -10,6 +10,10 @@ RSpec.feature "Users can sign up" do
     fill_in "Email", with: "zed@zed.com"
     fill_in "user_password", with: "password"
     fill_in "Password confirmation", with: "password"
+    fill_in "Address1", with: "The Orchid House"
+    fill_in "Address2", with: "7 Acacia Avenue"
+    fill_in "City", with: "Cambridge"
+    fill_in "Postcode", with: "CB1 1AB"
     click_button "Sign up"
     expect(page).to have_content("You have signed up successfully.")
   end
