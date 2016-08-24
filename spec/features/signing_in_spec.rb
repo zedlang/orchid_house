@@ -10,6 +10,7 @@ RSpec.feature "Users can sign in" do
     click_button "Log in"
     expect(page).to have_content "Signed in successfully."
     expect(page).to have_content "Signed in as #{user.email}"
+    expect(page.current_path).to eq("/")
   end
 end
 
@@ -23,6 +24,7 @@ RSpec.feature "Admin users can sign in" do
     click_button "Log in"
     expect(page).to have_content "Signed in successfully."
     expect(page).to have_content "Signed in as #{user.email}"
+    expect(page.current_path).to eq("/admin")
   end
 end
 

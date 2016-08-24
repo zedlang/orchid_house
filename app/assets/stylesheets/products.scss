@@ -5,15 +5,27 @@ h1 {
   font-size:  30pt;
 }
 
+h2 {
+  color: purple;
+  font-style: italic;
+  text-align: left;
+}
+
+div.fullimg {
+  margin: 50px;
+  float: left;
+}
+
 div.img {
   margin: 50px;
   float: left;
-  width: 100px;
+  display: block;
 }
 
 div.img img {
   width: 150px;
   height: 150px;
+  display: inline-block;
 }
 
 div.desc {
@@ -23,4 +35,8 @@ div.desc {
 
 div.desc li {
   list-style-type: none;
+}
+
+div#product {
+  font-size: 14pt
 }

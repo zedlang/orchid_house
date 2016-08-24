@@ -16,12 +16,12 @@
 
   <fieldset>          
     <%= f.label :price %>
-    <%= f.number_field :price %>
+    <%= f.number_field :price, min: 0, step: 0.01 %>
   </fieldset>
 
   <fieldset>          
     <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
+    <%= f.number_field :quantity, min: 0 %>
   </fieldset>
 
   <%= f.submit %>
