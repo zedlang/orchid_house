@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/carrierwaveuploader/carrierwave
+  revision: 8ceadb7fca5068564cfa8a33b1a76af86c6cbff3
+  specs:
+    carrierwave (0.11.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -156,6 +165,11 @@ GEM
       nokogiri (~> 1.6.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.0.0.1)
       actionpack (= 5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -232,6 +246,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  carrierwave!
   coffee-rails (~> 4.2)
   cucumber-rails
   database_cleaner
@@ -245,6 +260,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 3.0)
   rails (~> 5.0.0)
+  rails_12factor
   rspec-rails
   sass-rails (~> 5.0)
   spring
