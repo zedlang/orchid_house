@@ -1,6 +1,6 @@
 <h2><%= @product.name %></h2>
 <div class="fullimage">
-  <img src='/images/<%= @product.name %>.jpg'>
+  <%=image_tag("#{@product.name}.jpg", alt: "#{@product.name}.jpg")%>
 </div>
 <div id="product">
   <p><strong>Price:</strong> £<%= @product.price %></p>
