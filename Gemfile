@@ -49,6 +49,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'pg'
+  gem 'simplecov', :require => false
 end
 
 group :development do
