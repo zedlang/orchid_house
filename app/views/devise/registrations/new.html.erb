@@ -31,6 +31,27 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.fields_for :address do |o| %>
+      <li>
+        <%= o.label :address1 %>
+        <%= o.text_field :address1 %>
+      </li>
+      <li>
+        <%= o.label :address2 %>
+        <%= o.text_field :address2 %>
+      </li>
+      <li>
+        <%= o.label :city %>
+        <%= o.text_field :city %>
+      </li>
+      <li>
+        <%= o.label :postcode %>
+        <%= o.text_field :postcode %>
+      </li>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
