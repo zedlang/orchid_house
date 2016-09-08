@@ -1,0 +1,13 @@
+// Place all the styles related to the Baskets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table, th, td {
+
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+    padding: 20px;
+}

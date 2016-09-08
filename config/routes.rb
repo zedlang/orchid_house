@@ -13,4 +13,8 @@ Rails.application.routes.draw do
 
     resources :products, only: [:new, :create, :edit, :update, :destroy]
   end
+
+  resource :basket, only: [:show] do
+    put 'add/:product_id', to: 'baskets#add', as: :add_to, on: :member
+  end
 end

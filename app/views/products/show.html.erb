@@ -6,6 +6,9 @@
   <p><strong>Price:</strong> £<%= @product.price %></p>
   <p><strong>Number in stock:</strong> <%= @product.quantity %></p>
 </div>
+<div>
+  <%= link_to "Add to basket", add_to_basket_path(@product), method: :put, class: "link_button"%>
+</div>
 
 <% admins_only do %>
   <%= link_to "Edit Product", edit_admin_product_path, class: "link_button" %>
