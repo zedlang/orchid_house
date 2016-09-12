@@ -12,7 +12,10 @@
         <td><%= product.name %></td>
         <td><%= product.price %></td>
         <td><%= @basket.items.find_by(product_id: product.id).quantity %></td>
+        <td><%= link_to "Remove from basket", remove_from_basket_path(product), method: :put, class: "cell_link"%></td>
       </tr>
       <% end %>
   </table>
+  <p><%= link_to "Empty basket", empty_basket_path, method: :put, class: "link_button"%></p>
+  
 </div>

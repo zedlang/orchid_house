@@ -15,7 +15,10 @@ RSpec.feature "Users can add items to a basket" do
     expect(page).to have_content(@product.price, count: 1)
   end
 
-  scenario "User adds more than ome of the same item" do
+  scenario "User adds more than one of the same item" do
+    #Test that adding more than one item does not just add
+    #it to the list at the end
+
     click_link "Add to basket"
     visit "/products/#{@product.id}"
     click_link "Add to basket"

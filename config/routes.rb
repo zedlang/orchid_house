@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   end
 
   resource :basket, only: [:show] do
-    put 'add/:product_id', to: 'baskets#add', as: :add_to, on: :member
+    put 'add/:product_id', to: 'baskets#add', as: :add_to
+    put 'remove/:product_id', to: 'baskets#remove', as: :remove_from
+    put 'empty', to: 'baskets#empty', as: :empty
   end
 end
