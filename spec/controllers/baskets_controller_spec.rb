@@ -43,16 +43,4 @@ RSpec.describe BasketsController, type: :controller do
       expect(an_item).to be_nil
     end
   end
-
-  feature "Emptying the basket" do
-    before do
-      @basket = FactoryGirl.create(:basket)
-      @product = FactoryGirl.create(:product)
-      session[:basket_id] = @basket.id
-    end
-
-    scenario "No items are in the basket after it is emptied" do
-      #click_link "Empty basket"
-    end
-  end
 end
