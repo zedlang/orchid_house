@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root 'page#home'
 
   get 'page/about'
-
   get 'page/contact'
-
   get 'page/faq'
 
   devise_for :users
+
+  resources :messages
 
   resources :products, only: [:index, :show]
   

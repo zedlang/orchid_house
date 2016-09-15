@@ -26,6 +26,10 @@ body {
   background-color: #ccff99;
 }
 
+h2#address {
+  text-decoration: underline;
+}
+
 
 a:link {
     text-decoration: none;
@@ -43,3 +47,7 @@ a:active {
     text-decoration: underline;
 }
 
+p {
+  font-style: italic;
+  font-size: 14pt;
+}
