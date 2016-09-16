@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
+      MessageMailer.contact_email(@message).deliver
       render :create
     else
       render :new

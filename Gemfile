@@ -32,10 +32,8 @@ gem 'devise'
 # gem 'capistrano-rails', group: :development
 
 gem 'carrierwave'
-
+gem 'pg'
 group :production do
-  # Use Postgres
-  gem 'pg'
   gem 'rails_12factor'
 end
 
@@ -48,7 +46,6 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'pg'
   gem 'simplecov', :require => false
 end
 
