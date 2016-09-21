@@ -1,0 +1,35 @@
+<h1 id="contact">Enter your message details below</h1>
+
+<%= form_for @message do |f| %>
+  
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @message.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul> 
+    </div>
+<% end %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </fieldset>
+
+  <fieldset>          
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </fieldset>
+
+  <fieldset>          
+    <%= f.label :subject %>
+    <%= f.text_field :subject%>
+  </fieldset>
+
+  <fieldset>          
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+  </fieldset>
+
+  <%= f.submit "Submit Message"%>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160906155007) do
+ActiveRecord::Schema.define(version: 20160915163928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 20160906155007) do
     t.datetime "updated_at", null: false
     t.index ["basket_id"], name: "index_items_on_basket_id", using: :btree
     t.index ["product_id"], name: "index_items_on_product_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "subject"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
