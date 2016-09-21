@@ -23,7 +23,10 @@
       <% end %>
     </span>
     <span class="basket">
-      <%= link_to "View Basket", basket_path, class: "link_button" %>
+      <%= link_to "Basket", basket_path, class: "link_button" %>
+      <span id="quantity">
+        <%= basket_quantity %>
+      </span>
     </span>
   </header>
   <div>

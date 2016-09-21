@@ -1,6 +1,6 @@
 Given(/^they are on a random app page$/) do
   @pages = [root_path, products_path, page_about_path, page_contact_path, page_faq_path]
-  index = rand(6)
+  index = rand(5)
   visit @pages[index]
 end
 

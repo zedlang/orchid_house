@@ -39,10 +39,15 @@ ul.navbar li a:hover {
   color: black;
 }
 
-span.sign_in_out_up {
+span.sign_in_out_up, span.basket {
   text-align: right;
   float: right;
   margin-right: 20px;
+}
+
+#quantity {
+  color: red;
+  font-weight: bold
 }
 
 .link_button {
