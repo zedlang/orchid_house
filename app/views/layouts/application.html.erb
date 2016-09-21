@@ -22,6 +22,9 @@
           <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "link_button" %>
       <% end %>
     </span>
+    <span class="basket">
+      <%= link_to "View Basket", basket_path, class: "link_button" %>
+    </span>
   </header>
   <div>
     <ul class="navbar">
