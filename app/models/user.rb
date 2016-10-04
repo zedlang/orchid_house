@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :addresses, :dependent => :destroy
-  accepts_nested_attributes_for :addresses
+  accepts_nested_attributes_for :addresses, allow_destroy: true
 
   validates :first_name, presence: true
   validates :last_name, presence: true

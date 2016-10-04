@@ -4,5 +4,6 @@ FactoryGirl.define do
     address2 "1 Acacia Avenue"
     city "Cambridge"
     postcode "CB1 1BC"
+    user
   end
 end

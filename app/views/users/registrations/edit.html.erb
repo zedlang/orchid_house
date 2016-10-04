@@ -42,7 +42,8 @@
   </div>
 
   <div class="field">
-    <%= f.fields_for resource.addresses.first do |o| %>
+    <%= f.fields_for "addresses_attributes[]",resource.addresses.first do |o| %>
+        <%= o.hidden_field :id %>
       <li>
         <%= o.label :address1 %>
         <%= o.text_field :address1 %>

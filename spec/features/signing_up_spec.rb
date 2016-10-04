@@ -9,6 +9,7 @@ RSpec.feature "Users can sign up" do
     fill_in "user_password", with: "password"
     fill_in "Password confirmation", with: "password"
   end
+  
   scenario "when providing valid details" do
     fill_in "First name", with: "John"
     fill_in "Last name", with: "Smith"
@@ -17,6 +18,7 @@ RSpec.feature "Users can sign up" do
     fill_in "City", with: "Cambridge"
     fill_in "Postcode", with: "CB1 1AB"
     click_button "Sign up"
+    save_and_open_page
     expect(page).to have_content("You have signed up successfully.")
   end
 

@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'page/contact'
   get 'page/faq'
 
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "users/registrations"}
+  devise_scope :user do get "/show" => "users/registrations#show" end
 
   resources :messages
 

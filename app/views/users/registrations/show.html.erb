@@ -1,0 +1,10 @@
+<h1>Account details for <%=@user.first_name%> <%=@user.last_name%></h1>
+<h3>First Name: <%=@user.first_name%></h3>
+<h3>Last Name: <%=@user.last_name%></h3>
+<h3>Email: <%=@user.email%></h3>
+<h3>Address1: <%=@user.addresses.first.address1%></h3>
+<h3>Address2: <%=@user.addresses.first.address2%></h3>
+<h3>City: <%=@user.addresses.first.city%></h3>
+<h3>Postcode: <%=@user.addresses.first.postcode%></h3>
+
+<%= link_to "Edit Account Details", edit_user_registration_path, class: "link_button" %>
