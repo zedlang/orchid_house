@@ -31,10 +31,8 @@
     </span>
     <span class="search">
       <%= form_tag(products_path, method: :get) do %>
-        <p>
           <%= text_field_tag :query, params[:query] %>
           <%= button_tag "Search", name: nil, class: "link_button" %>
-        </p>
         <% end -%>
     </span>
   </header>

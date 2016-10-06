@@ -45,6 +45,18 @@ span.sign_in_out_up, span.basket, span.search {
   margin-right: 20px;
 }
 
+span.search input {
+  height: 30px;
+  width: 150px;
+}
+
+span.search button {
+  display: inline-block;
+  height: 35px;
+  font-family: Times;
+  font-size: 12pt
+}
+
 #quantity {
   color: red;
   font-weight: bold
