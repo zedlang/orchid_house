@@ -1,4 +1,10 @@
 class Product < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
+  mapping do
+    indexes :name
+  end
 
   has_many :items
   has_many :baskets, through: :items

@@ -33,6 +33,9 @@ gem 'devise'
 
 gem 'carrierwave'
 gem 'pg'
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
+
 group :production do
   gem 'rails_12factor'
 end

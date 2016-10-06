@@ -39,7 +39,7 @@ ul.navbar li a:hover {
   color: black;
 }
 
-span.sign_in_out_up, span.basket {
+span.sign_in_out_up, span.basket, span.search {
   text-align: right;
   float: right;
   margin-right: 20px;
