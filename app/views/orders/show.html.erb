@@ -1,0 +1,32 @@
+<h1>Order Details</h1>
+<div id="basket">
+  <table>
+    <tr>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+      <% @order.basket.products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= number = @order.basket.items.find_by(product_id: product.id).quantity %></td>
+        <td>£<%= number * product.price %></td>
+    </tr>
+      <% end %>
+    <tr>
+      <th>Total</th>
+        <td></td>
+          <td id="total">£<%= @order.basket.total %></td>
+    </tr>
+  </table>
+</div>
+<h2>Address for delivery</h2>
+<h3>First Name: <%=@user.first_name%></h3>
+<h3>Last Name: <%=@user.last_name%></h3>
+<h3>Email: <%=@user.email%></h3>
+<h3>Address1: <%=@user.addresses.first.address1%></h3>
+<h3>Address2: <%=@user.addresses.first.address2%></h3>
+<h3>City: <%=@user.addresses.first.city%></h3>
+<h3>Postcode: <%=@user.addresses.first.postcode%></h3>
+
+<p><%= link_to "Pay for goods", new_charge_path(:total => @order.basket.total), class: "link_button"%></p>

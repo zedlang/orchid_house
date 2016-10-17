@@ -3,6 +3,9 @@ class BasketsController < ApplicationController
   before_action :basket, :only => [:add, :remove, :empty, :show]
 
   def show
+    # @order = Order.find_or_create_by(basket_id: @basket.id)
+    # @order.basket = @basket
+    # #binding.pry
   end
 
   def add

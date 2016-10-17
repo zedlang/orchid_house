@@ -12,7 +12,11 @@ Rails.application.routes.draw do
     get "user_root" => "page#show"
   end
 
+  resources :charges, only: [:new, :create]
+
   resources :messages
+
+  resources :orders
 
   resources :products, only: [:index, :show]
   

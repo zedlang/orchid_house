@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915163928) do
+ActiveRecord::Schema.define(version: 20161016111920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20160915163928) do
   create_table "baskets", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "order_id"
+    t.index ["order_id"], name: "index_baskets_on_order_id", using: :btree
   end
 
   create_table "items", force: :cascade do |t|
@@ -47,6 +49,14 @@ ActiveRecord::Schema.define(version: 20160915163928) do
     t.text     "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "status"
+    t.integer  "basket_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["basket_id"], name: "index_orders_on_basket_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -77,6 +87,7 @@ ActiveRecord::Schema.define(version: 20160915163928) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "baskets", "orders"
   add_foreign_key "items", "baskets"
   add_foreign_key "items", "products"
 end
