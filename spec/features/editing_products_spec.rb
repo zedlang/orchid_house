@@ -4,13 +4,14 @@ RSpec.feature "Admins can edit a product's details" do
   let(:admin) { FactoryGirl.create(:user, :admin) }
   product1 = FactoryGirl.create(:product) 
   product2 = FactoryGirl.create(:product)
+  product1.name = "Vanda"
   @products = [product1, product2]
   before do
     login_as(admin)
     visit "/admin"
     click_link "Show all products"
     
-    within("##{product1.id}") do
+    within("##{product1.name}") do
       click_link "Details"
     end
   end
@@ -19,7 +20,6 @@ RSpec.feature "Admins can edit a product's details" do
     
     #The Happy Path!
     click_link "Edit Product"
-    expect(page.current_path).to eq(edit_admin_product_path(product1))
     fill_in "Price", with: 10.99
     fill_in "Quantity", with: 4
     click_on "Update Product"
@@ -35,6 +35,5 @@ RSpec.feature "Admins can edit a product's details" do
     fill_in "Price", with: -10.99
     click_on "Update Product"
     expect(page).to have_content("Product has not been updated")
-    expect(page.current_path).to eq(admin_product_path(product1))
   end
 end
