@@ -1,11 +1,11 @@
 #Create an admin user
 unless User.exists?(email: "admin@orchidhouse.com")
-  User.create!(email: "admin@orchidhouse.com", password: "password", admin: true) 
+  User.create!(first_name: "Peter", last_name: "Bloggs", email: "admin@orchidhouse.com", password: "password", admin: true) 
 end
 
 #Create an ordinary user
 unless User.exists?(email: "customer@orchidhouse.com")
-  User.create!(email: "customer@orchidhouse.com", password: "password")
+  User.create!(first_name: "Peter", last_name: "Bloggs", email: "customer@orchidhouse.com", password: "password")
 end
 
 #Create some products

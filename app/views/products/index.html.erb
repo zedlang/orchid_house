@@ -5,7 +5,7 @@
       <% @products.each do |product| %>
         <div class="img"><%=image_tag("#{product.name}.jpg", alt: "#{product.name}.jpg")%>
           <div class="desc"><h3><%= product.name %></h3>
-            <li id="<%= product.id %>">
+            <li id="<%= product.name %>">
               <%= link_to "Details", product_path(product) %>
             </li>
           </div>

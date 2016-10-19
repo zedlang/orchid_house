@@ -11,7 +11,7 @@ RSpec.feature "Admins can delete a product" do
     visit "/admin"
     click_link "Show all products"
     
-    within("##{product1.id}") do
+    within("##{product2.name}") do
       click_link "Details"
     end
   end
