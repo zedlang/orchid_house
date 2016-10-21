@@ -3,7 +3,7 @@ Before ('@view_order') do
 
   @order = FactoryGirl.create(:order)
   @basket = FactoryGirl.create(:basket, order_id: @order.id)
-  @basket.items.create(basket_id: @basket.id, product_id: @product.id, quantity: 1)
-  @order.basket_id = @basket.id
-  @order.basket = @basket
+
+  @basket.items.create!(product_id: @product.id, quantity: 1)
+  @order.update!(basket: @basket)
 end

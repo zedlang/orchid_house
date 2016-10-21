@@ -51,6 +51,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'simplecov', :require => false
+  gem 'stripe-ruby-mock', '~> 2.3.1', :require => 'stripe_mock'
 end
 
 group :development do

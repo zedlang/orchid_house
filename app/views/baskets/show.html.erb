@@ -24,7 +24,7 @@
   </table>
   <p><%= link_to "Empty basket", empty_basket_path, method: :put, class: "link_button"%>
 
-    <%= link_to "Place Order", orders_path(basket: {basket_id: @basket.id}), method: :post, class: "link_button"%>
+    <%= link_to "Place Order", orders_path, method: :post, class: "link_button"%>
   </p>
   
 </div>

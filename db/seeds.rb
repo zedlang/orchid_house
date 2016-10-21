@@ -1,11 +1,13 @@
 #Create an admin user
 unless User.exists?(email: "admin@orchidhouse.com")
-  User.create!(first_name: "Peter", last_name: "Bloggs", email: "admin@orchidhouse.com", password: "password", admin: true) 
+  u = User.create!(first_name: "Peter", last_name: "Bloggs", email: "admin@orchidhouse.com", password: "password", admin: true)
+  u.addresses << Address.new(address1: "The Orchid House", address2: "1 Orchid Street", city: "Cambridge", postcode: "CB1 1ZZ")
 end
 
 #Create an ordinary user
 unless User.exists?(email: "customer@orchidhouse.com")
-  User.create!(first_name: "Peter", last_name: "Bloggs", email: "customer@orchidhouse.com", password: "password")
+  u = User.create!(first_name: "Peter", last_name: "Bloggs", email: "customer@orchidhouse.com", password: "password")
+  u.addresses << Address.new(address1: "1 Acacia Avenue", city: "Cambridge", postcode: "CB1 1ZZ")
 end
 
 #Create some products

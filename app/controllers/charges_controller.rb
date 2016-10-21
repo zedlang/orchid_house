@@ -1,14 +1,12 @@
 class ChargesController < ApplicationController
 
 def new
-
   @total = params[:total]
-  binding.pry
 end
 
 def create
   # Amount in pence
-  @total = Basket.total
+  @total = params[:total]
 
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
