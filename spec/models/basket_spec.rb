@@ -5,6 +5,8 @@ RSpec.describe Basket, type: :model do
   feature "Testing quantity and total method on basket" do
     before do
       @basket = FactoryGirl.create(:basket)
+      @order = FactoryGirl.create(:order, basket_id: @basket.id)
+      page.set_rack_session(basket_id: @basket.id)
       @product = FactoryGirl.create(:product)
     end
 

@@ -4,7 +4,10 @@ RSpec.feature "Emptying a basket" do
 
   before do
     @product = FactoryGirl.create(:product)
+    
     @basket = FactoryGirl.create(:basket)
+    @order = FactoryGirl.create(:order, basket_id: @basket.id)
+    page.set_rack_session(basket_id: @basket.id)
     visit "/products/#{@product.id}"
     click_link "Add to basket"
     visit basket_path

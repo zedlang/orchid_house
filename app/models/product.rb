@@ -25,8 +25,7 @@ class Product < ApplicationRecord
     )
   end
 
-  Product.first.__elasticsearch__.index_document
-  Product.import
+  Product.__elasticsearch__.import
 end
 
 

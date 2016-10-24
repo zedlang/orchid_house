@@ -2,7 +2,7 @@ class Basket < ApplicationRecord
 
   has_many :items, dependent: :destroy
   has_many :products, through: :items
-  belongs_to :order
+  has_one :order
 
   def quantity
     my_items = self.items

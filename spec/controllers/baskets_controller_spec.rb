@@ -5,6 +5,7 @@ RSpec.describe BasketsController, type: :controller do
   feature "Adding items" do
     before do
       @basket = FactoryGirl.create(:basket)
+      @order = FactoryGirl.create(:order, basket_id: @basket.id)
       @product = FactoryGirl.create(:product)
       session[:basket_id] = @basket.id
     end
@@ -22,6 +23,7 @@ RSpec.describe BasketsController, type: :controller do
   feature "Removing items" do
     before do
       @basket = FactoryGirl.create(:basket)
+      @order = FactoryGirl.create(:order, basket_id: @basket.id)
       @product = FactoryGirl.create(:product)
       session[:basket_id] = @basket.id
     end

@@ -52,6 +52,7 @@ group :development, :test do
   gem 'launchy'
   gem 'simplecov', :require => false
   gem 'stripe-ruby-mock', '~> 2.3.1', :require => 'stripe_mock'
+  gem 'rack_session_access'
 end
 
 group :development do
