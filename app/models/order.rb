@@ -1,11 +1,9 @@
 class Order < ApplicationRecord
 
-  attr_writer :order_number
-
   belongs_to :basket
 
   def set_order_number
-    self.order_number = self.id
+    return self.id
   end
 
   def set_status(confirmed)

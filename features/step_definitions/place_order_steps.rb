@@ -26,12 +26,26 @@ When(/^they go to the order page$/) do
 end
 
 Then(/^they see details of the order$/) do
-  save_and_open_page
   expect(page).to have_content("Order Details")
   expect(page).to have_content("Order No#")
-  expect(find(:css, "span#order_no").text).to eq(@order.order_no.to_s)
+  expect(page).to have_css("span#order_no", text: @order.order_no.to_s)
   expect(page).to have_content("Total")
   expect(page).to have_content("Address for delivery")
   expect(page).to have_content("Email: customer@orchidhouse.com")
   expect(page).to have_css("td#total", text: @order.basket.total.to_s)
 end
+
+When(/^they have an empty basket$/) do
+  visit basket_path
+  click_link "Empty basket"
+end
+
+Then(/^they see a helpful message$/) do
+  save_and_open_page
+  expect(page).to have_content("You cannot place an order if your basket is empty!")
+end
+
+Then(/^they stay on the basket page$/) do
+  expect(page.current_path).to eq(basket_path)
+end
+

@@ -17,7 +17,7 @@ RSpec.feature "Admins can delete a product" do
   end
 
   scenario "An admin clicks Delete Product and removes an existing product" do
-    
+
     click_link "Delete Product"
     expect(page).to have_content "Product has been deleted"
     expect(page.current_path).to eq products_path
