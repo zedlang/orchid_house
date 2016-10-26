@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    if self.basket.total == 0
+    if basket_quantity == 0
       flash[:alert] = "You cannot place an order if your basket is empty!"
       redirect_to basket_path and return
     end

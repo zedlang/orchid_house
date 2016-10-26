@@ -16,7 +16,6 @@ Then(/^they see the basket's contents$/) do
 end
 
 Then(/^they see the number of items in the basket$/) do
-  save_and_open_page
   expect(page).to have_css("span#quantity")
   expect(find(:css, "span#quantity").text).to eq(@basket.quantity.to_s)
 end

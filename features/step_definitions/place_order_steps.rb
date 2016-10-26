@@ -41,7 +41,7 @@ When(/^they have an empty basket$/) do
 end
 
 Then(/^they see a helpful message$/) do
-  save_and_open_page
+  click_link "Place Order"
   expect(page).to have_content("You cannot place an order if your basket is empty!")
 end
 
