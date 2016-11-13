@@ -1,4 +1,4 @@
-Before ('@view_order, @view_basket') do
+Before ('@view_order, @view_basket, @checkout') do
   @product = FactoryGirl.create(:product)
 
   @basket = FactoryGirl.create(:basket)

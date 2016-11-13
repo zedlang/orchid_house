@@ -1,12 +1,13 @@
 class ChargesController < ApplicationController
 
 def new
-  @total = params[:total]
+  @order = Order.find(params[:order_id].to_i)
+  @total = @order.basket.total
 end
 
 def create
   # Amount in pence
-  @total = params[:total]
+  @total = @order.basket.total
 
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],

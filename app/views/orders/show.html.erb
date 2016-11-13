@@ -30,4 +30,4 @@
 <h3>City: <%=@user.addresses.first.city%></h3>
 <h3>Postcode: <%=@user.addresses.first.postcode%></h3>
 
-<p><%= link_to "Pay for goods", new_charge_path(:total => @order.basket.total), class: "link_button"%></p>
+<p><%= link_to "Pay for goods", new_charge_path(:order_id => @order.id), class: "link_button"%></p>
